@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31004.235
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransactionsManager", "TransactionsManager\TransactionsManager.csproj", "{00F603A0-228D-4C94-BE3C-8C64BEFF4E6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionsManger.DAL", "TransactionsManger.DAL\TransactionsManger.DAL.csproj", "{8B42F415-D15F-4F65-AA7E-A10D1C196AE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00F603A0-228D-4C94-BE3C-8C64BEFF4E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00F603A0-228D-4C94-BE3C-8C64BEFF4E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00F603A0-228D-4C94-BE3C-8C64BEFF4E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00F603A0-228D-4C94-BE3C-8C64BEFF4E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B42F415-D15F-4F65-AA7E-A10D1C196AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B42F415-D15F-4F65-AA7E-A10D1C196AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B42F415-D15F-4F65-AA7E-A10D1C196AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B42F415-D15F-4F65-AA7E-A10D1C196AE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DC438E6-0382-42E0-8949-3F79ACEC15CF}
+	EndGlobalSection
+EndGlobal
