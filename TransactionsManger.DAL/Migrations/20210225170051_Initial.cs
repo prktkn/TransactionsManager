@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace TransactionsManager.Migrations
+namespace TransactionsManger.DAL.Migrations
 {
     public partial class Initial : Migration
     {
@@ -41,16 +41,15 @@ namespace TransactionsManager.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Login = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Login = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_Users", x => x.Login);
                 });
-            migrationBuilder.Sql(
+
+             migrationBuilder.Sql(
                 @"IF OBJECT_ID ( 'MergeTransactions', 'P' ) IS NOT NULL
     DROP PROCEDURE MergeTransactions;
 GO

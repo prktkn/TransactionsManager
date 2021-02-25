@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,12 +15,12 @@ namespace TransactionsManager.DAL.Services
         {
             _dbContext = dbCoontext;
         }
-
+        
         public async Task<List<Transaction>> Get(TransactionFilter filter)
         {
             var transaction = await _dbContext.Set<Transaction>()
-                .Where(x => x.Status.Contains(filter.Status ?? string.Empty) &&
-                            x.Type.Contains(filter.Type ?? string.Empty) &&
+                .Where(x => (string.IsNullOrEmpty(filter.Status) || x.Status.Equals(filter.Status)) &&
+                            (string.IsNullOrEmpty(filter.Type) || x.Status.Equals(filter.Type)) &&
                             x.ClientName.Contains(filter.ClientName ?? string.Empty))
                 .ToListAsync();
 

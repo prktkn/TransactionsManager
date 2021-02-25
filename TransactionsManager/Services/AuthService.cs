@@ -20,6 +20,7 @@ namespace TransactionsManager.Services
         {
             var existingUser = await _dbContext.Set<User>().FirstOrDefaultAsync(x => x.Login == user.Login);
             if (existingUser != null) return false;
+
             await _dbContext.Set<User>().AddAsync(new User { Login = user.Login, Password = user.Password });
             await _dbContext.SaveChangesAsync();
             return true;
@@ -34,7 +35,6 @@ namespace TransactionsManager.Services
 
         public string GenerateToken(string login)
         {
-            var now = DateTime.UtcNow;
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, login.ToString())
